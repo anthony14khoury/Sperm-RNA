@@ -19,4 +19,4 @@ The purpose of this proect is to analyze a genomic dataset scientifically and pr
 - https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE65683
 
 ### Question to Solve:
-- Can Sperm RNA Element (SRE) analysis have the potential to predict the individual success rate of different fertility treatments and reduce the time to achieve live birth?
+- Can Sperm RNA Element (SRE) analysis predict an individual’s fertility success rate?
