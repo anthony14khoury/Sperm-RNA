@@ -4,7 +4,7 @@ University of Florida
 
 Bioinformatic Algorithms
 
-Contributors:
+Team:
 - Anthony Khoury
 - Michael Hayworth
 - Gabriel Arias
