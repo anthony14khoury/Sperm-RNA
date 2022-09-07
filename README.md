@@ -1,8 +1,10 @@
 # Sperm-RNA
 
-#### University of Florida
-#### Course: Bioinformatic Algorithms
-#### Contributors:
+University of Florida
+
+Bioinformatic Algorithms
+
+Contributors:
 - Anthony Khoury
 - Michael Hayworth
 - Gabriel Arias
