@@ -55,5 +55,5 @@ final <- merge(expression_df,G_list,by.x="Gene",by.y="ensembl_gene_id")
 # Write mapped and annotated data frame to output file
 readr::write_tsv(final, file.path(
   data_dir,
-  "SRP040561_Entrez_IDs.tsv" # Replace with a relevant output file name
+  "CleanedData.tsv"
 ))
