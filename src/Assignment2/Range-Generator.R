@@ -14,7 +14,9 @@ for (row in 1:nrow(range_df)) {
 
 range_df$Range <- column
 
-
+#Ranges.tsv was not added to the GitHub repository for the 
+#sake of space, you can generate it if needed - it looks exactly like 
+#CleanedData.tsv with an extra column for the range
 readr::write_tsv(range_df, file.path(
   data_dir,
   "Ranges.tsv"
