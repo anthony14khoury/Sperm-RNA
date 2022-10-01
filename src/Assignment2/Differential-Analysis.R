@@ -100,13 +100,11 @@ deseq_df <- deseq_results %>%
 
 head(deseq_df)
 
-plotCounts(ddset, gene = "32612", intgroup = "mutation_status")
-
 readr::write_tsv(
   deseq_df,
   file.path(
     data_dir,
-    "diff_expr_results.tsv" # Replace with a relevant output file name
+    "diff_expr_results.tsv"
   )
 )
 
@@ -120,6 +118,6 @@ volcano_plot <- EnhancedVolcano::EnhancedVolcano(
 )
 
 ggsave(
-  plot = volcano_plot,
-  file.path(data_dir, "volcano_plot.png")
-) # Replace with a plot name relevant to your data
+  plot = volcano_plot + ylim(0,10),
+  file.path(data_dir, "volcano_plot2.png")
+)
