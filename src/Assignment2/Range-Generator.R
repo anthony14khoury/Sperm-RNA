@@ -8,7 +8,7 @@ range_df = readr::read_tsv(data_file)
 column <- c()
 
 for (row in 1:nrow(range_df)) {
-  range = max(range_df[row , 2:72], na.rm=TRUE) - min(range_df[row, 2:72], na.rm=TRUE)
+  range = max(range_df[row , 2:73], na.rm=TRUE) - min(range_df[row, 2:73], na.rm=TRUE)
   column = c(column, range)
 }
 

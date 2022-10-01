@@ -48,12 +48,11 @@ BiocManager::install("biomaRt")
 library('biomaRt')
 mart <- useDataset("hsapiens_gene_ensembl", useMart("ensembl"))
 genes <- expression_df$Gene
-expression_df<-expression_df[,-4]
 G_list <- getBM(filters= "ensembl_gene_id", attributes= c("ensembl_gene_id","hgnc_symbol"),values=genes,mart= mart)
 final <- merge(expression_df,G_list,by.x="Gene",by.y="ensembl_gene_id")
 
 # Write mapped and annotated data frame to output file
 readr::write_tsv(final, file.path(
   data_dir,
-  "CleanedData.tsv"
+  "CleanedData2.tsv"
 ))
