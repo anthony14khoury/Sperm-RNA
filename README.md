@@ -7,7 +7,7 @@ Bioinformatic Algorithms
 Team:
 - Anthony Khoury
 - Michael Hayworth
-- Gabriel Arias
+- Gabriel Arias-Marin
 - Gateston Johns
 
 
