@@ -1,28 +1,12 @@
-data_dir = file.path("UF/data", "SRP053246")
-data_file = file.path(data_dir, "CleanedData.tsv")
+# Import Libraries
+library(DESeq2)   # Attach the DESeq2 library
+library(ggplot2)  # Attach the ggplot2 library for plotting
+library(magrittr) # We will need this so we can use the pipe: %>%
+
+data_dir = file.path("Raw Data", "SRP053246")
+data_file = file.path("CleanData", "CleanedData.tsv")
 metadata_file = file.path(data_dir, "metadata_SRP053246.tsv")
 
-if (!("DESeq2" %in% installed.packages())) {
-  # Install this package if it isn't installed yet
-  BiocManager::install("DESeq2")
-}
-if (!("EnhancedVolcano" %in% installed.packages())) {
-  # Install this package if it isn't installed yet
-  BiocManager::install("EnhancedVolcano")
-}
-if (!("apeglm" %in% installed.packages())) {
-  # Install this package if it isn't installed yet
-  BiocManager::install("apeglm")
-}
-
-# Attach the DESeq2 library
-library(DESeq2)
-
-# Attach the ggplot2 library for plotting
-library(ggplot2)
-
-# We will need this so we can use the pipe: %>%
-library(magrittr)
 
 # Read in metadata TSV file
 metadata <- readr::read_tsv(metadata_file)

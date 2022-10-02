@@ -18,3 +18,16 @@ install.packages("tidyverse")
 
 # Install BiocManager Packages
 BiocManager::install("biomaRt")
+
+if (!("DESeq2" %in% installed.packages())) {
+  # Install this package if it isn't installed yet
+  BiocManager::install("DESeq2")
+}
+if (!("EnhancedVolcano" %in% installed.packages())) {
+  # Install this package if it isn't installed yet
+  BiocManager::install("EnhancedVolcano")
+}
+if (!("apeglm" %in% installed.packages())) {
+  # Install this package if it isn't installed yet
+  BiocManager::install("apeglm")
+}
