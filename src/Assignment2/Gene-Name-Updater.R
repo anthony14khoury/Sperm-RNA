@@ -1,5 +1,5 @@
 # File Paths
-data_dir = file.path("../../Raw Data", "SRP053246")
+data_dir = file.path("Raw Data", "SRP053246")
 data_file = file.path(data_dir, "SRP053246.tsv")
 metadata_file = file.path(data_dir, "metadata_SRP053246.tsv")
 
@@ -9,7 +9,7 @@ library(org.Hs.eg.db)
 library(magrittr)# We will need this so we can use the pipe: %>%
 library('biomaRt')
 
- 
+
 # Read in metadata TSV file
 metadata <- readr::read_tsv(metadata_file)
 
