@@ -8,6 +8,7 @@ data_file = file.path("CleanData", "CleanedData.tsv")
 
 # Read in Data
 range_df = readr::read_tsv(data_file)
+# range_df <- read.delim(data_file, header = TRUE, stringsAsFactors = FALSE)
 
 
 column <- c()
@@ -22,7 +23,8 @@ range_df$Range <- column
 # sake of space, you can generate it if needed - it looks exactly like 
 # CleanedData.tsv with an extra column for the range
 # Create a file called "Ranges.tsv" and run the file to generate the data
-readr::write_tsv(range_df, file.path(data_dir, "Ranges.tsv"))
+# readr::write_tsv(range_df, file.path(data_dir, "Ranges.tsv"))
 
 # Density Plot
 range_df %>% ggplot(aes(x = Range)) + geom_density()
+
