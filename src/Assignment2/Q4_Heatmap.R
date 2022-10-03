@@ -8,12 +8,13 @@ library(pheatmap)
 
 # File Directories
 data_dir = file.path("Raw Data", "SRP053246")
-data_file = file.path("CleanData", "CleanedData.tsv")
+data_file = file.path("CleanData", "CleanedData_diff_expr.tsv")
 metadata_file = file.path(data_dir, "metadata_SRP053246.tsv")
 
 # Load Data
 metadata <- readr::read_tsv(metadata_file)
-expression_df <- readr::read_tsv(data_file)
+expression_df <- readr::read_tsv(data_file) %>%
+  tibble::column_to_rownames("Gene")
 
 # Ensuring Data and Metadata are in the Same Order
 expression_df <- expression_df %>% 
@@ -31,7 +32,7 @@ dds <- DESeqDataSetFromMatrix(
 )
 
 # Perform DESeq2 normalization and transformation
-dds_norm <- vst(dds)
+dds_norm <- varianceStabilizingTransformation(dds)
 
 # Choose Genes of Interest
 variances <- apply(assay(dds_norm), 1, var)
