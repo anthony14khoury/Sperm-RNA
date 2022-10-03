@@ -29,3 +29,9 @@ if (!("DESeq2" %in% installed.packages())) {
 if (!("apeglm" %in% installed.packages())) {
   BiocManager::install("apeglm")
 }
+if (!require("BiocManager", quietly = TRUE)){
+  BiocManager::install("ComplexHeatmap")
+}
+if (!require("pheatmap", quietly = TRUE)){
+  BiocManager::install("pheatmap")
+}
