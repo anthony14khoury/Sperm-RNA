@@ -1,4 +1,4 @@
-# Q4: Generate a PCA plot
+# Q4: Generate a Heatmap
 
 # Libraries
 library(ComplexHeatmap)
