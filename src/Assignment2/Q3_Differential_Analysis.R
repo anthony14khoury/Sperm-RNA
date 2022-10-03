@@ -13,7 +13,8 @@ metadata_file = file.path(data_dir, "metadata_SRP053246.tsv")
 
 # Load Data
 metadata <- readr::read_tsv(metadata_file)
-expression_df <- readr::read_tsv(data_file)
+expression_df <- readr::read_tsv(data_file)%>%
+  tibble::column_to_rownames("Gene")
 
 
 # Ensuring Data and Metadata are in the Same Order
