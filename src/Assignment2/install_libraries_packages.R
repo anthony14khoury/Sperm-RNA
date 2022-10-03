@@ -35,3 +35,7 @@ if (!require("BiocManager", quietly = TRUE)){
 if (!require("pheatmap", quietly = TRUE)){
   BiocManager::install("pheatmap")
 }
+
+# Install gProfiler2 and jsonlite
+install.packages("gprofiler2")
+install.packages('jsonlite', version = '1.8.1') #DO NOT COMPILE JSONLITE
