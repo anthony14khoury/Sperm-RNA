@@ -72,10 +72,11 @@ set.seed(123)
 k = kmeans(df, 2)
 pheatmap((as.matrix(df)[order(k$cluster),]), 
         scale="row",
-        color=colorRampPalette(c("blue", "green"))(50),
+        color=colorRampPalette(c("blue", "white"))(2),
         show_rownames=F,
         show_colnames=F,
         cluster_cols=T, 
         cluster_rows=T, 
         clustering_method="complete",
         )
+
