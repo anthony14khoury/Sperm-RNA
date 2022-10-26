@@ -1,4 +1,4 @@
-Sample,Consensus-10,Consensus-100,Consensus-1000,Consensus-5000,Consensus-10000
+Sample,PAM10,PAM100,PAM1000,PAM5000,PAM10000
 S1,1,1,1,1,1
 S2,2,2,2,2,2
 S3,1,1,1,1,1
