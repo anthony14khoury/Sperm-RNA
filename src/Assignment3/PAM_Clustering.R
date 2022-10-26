@@ -30,7 +30,7 @@ k <- which.max(clusters[1][["data"]][["y"]])
 pamResult <- pam(df, k = k)
 pamResult
 
-pm <- eclust(df,FUNcluster="pam", k=6,hc_metric = "euclidean")
+pm <- eclust(df,FUNcluster="pam", k=k,hc_metric = "euclidean")
 
 fviz_cluster(pamResult, 
              palette =c("#007892","#D9455F"),
@@ -38,3 +38,4 @@ fviz_cluster(pamResult,
              repel =TRUE,
              ggtheme =theme_minimal())
 
+#change
