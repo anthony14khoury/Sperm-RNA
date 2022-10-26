@@ -11,7 +11,7 @@ library(NbClust)
 expMatrix <- multiClust::input_file("CleanData/CleanedData.tsv")
 
 # extract only certain num of most variable genes
-numGenes = 100
+numGenes = 10000
 
 d <- multiClust::probe_ranking("CleanData/CleanedData.tsv", 
                                               numGenes, 
@@ -20,22 +20,28 @@ d <- multiClust::probe_ranking("CleanData/CleanedData.tsv",
                                               method = "SD_Rank")
 # Scale data
 df <- scale(d)
+#transpose data
+tdf<-t(df)
 
 # Silhouette method
-clusters <- fviz_nbclust(df, pam, method = "silhouette")+
+clusters <- fviz_nbclust(tdf, pam, method = "silhouette")+
   labs(subtitle = "Silhouette method")
 
 k <- which.max(clusters[1][["data"]][["y"]])
+k
 
-pamResult <- pam(df, k = k)
+#PAM clustering
+pamResult <- pam(tdf, k = k)
 pamResult
+result <- pamResult$clustering
 
-pm <- eclust(df,FUNcluster="pam", k=k,hc_metric = "euclidean")
+Patient_Clusters = data.frame(result)
 
-fviz_cluster(pamResult, 
-             palette =c("#007892","#D9455F"),
-             ellipse.type ="euclid",
-             repel =TRUE,
-             ggtheme =theme_minimal())
+#Write to CSV
+write.csv(Patient_Clusters,"src/Assignment3/PAM_CSVs/10000.csv")
 
-#change
+#plotting
+pm <- eclust(tdf,FUNcluster="pam", k=k ,hc_metric = "euclidean")
+
+
+
