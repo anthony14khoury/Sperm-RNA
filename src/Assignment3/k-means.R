@@ -23,7 +23,7 @@ expression_df = readr::read_tsv(data_file)
 
 
 # ---------------------------------
-print("Preprocessing the data")
+print("Preprocessing the data") 
 numGenes = 10
 expMatrix <- multiClust::input_file(data_file)
 d <- multiClust::probe_ranking(data_file, 
