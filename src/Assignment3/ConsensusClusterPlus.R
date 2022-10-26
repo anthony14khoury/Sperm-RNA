@@ -2,6 +2,7 @@ data_dir = file.path("UF/data", "SRP053246")
 data_file = file.path(data_dir, "CleanedData.tsv")
 
 df = readr::read_tsv(data_file)
+df <- df[,-1]
 View(df)
 
 if (!require("BiocManager", quietly = TRUE))
